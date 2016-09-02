@@ -7,10 +7,8 @@ function getLogs(){
 		for (var k in result) {
 			logs += "["+convertTimestamp(k)+"]"+result[k]+"\n";
 		}
-		chrome.storage.local.get(null, function (result) {
-			var list = document.getElementById('list');
-			list.innerHTML=logs;
-		});
+		var list = document.getElementById('list');
+		list.innerHTML=logs;
 	});
 }
 
