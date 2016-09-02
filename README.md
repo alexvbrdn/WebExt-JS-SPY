@@ -1,4 +1,4 @@
-# WebExt-JS-SPY
+# JS-SPY Module
 **For testing purpose only.**
 
 **Do not use against the will of someone, I decline all responsability about the use of the extension.**
