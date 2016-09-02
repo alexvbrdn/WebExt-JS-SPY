@@ -24,12 +24,12 @@ function convertTimestamp(timestamp) {
 	min = ('0' + d.getMinutes()).slice(-2),
 	sec = ('0' + d.getSeconds()).slice(-2),
 	time;
-	console.log(timestamp);
-	console.log(d);
 	time = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + min + ":" + sec;
 		
 	return time;
 }
+
+//Taken from https://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server
 function download(filename, text) {
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));

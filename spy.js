@@ -1,25 +1,30 @@
 var debug = 1;
 
+var currLoc = "";
+spyjs_refreshEvents();
 
-var currLoc = location.href;
-if(debug){
-	console.log("("+currLoc+")");
-}
-spyjs_saveData("("+currLoc+")");
-var inputs = document.querySelectorAll('input');
-for(var i = 0; i < inputs.length; i++) {
-	inputs[i].addEventListener("change", function(e) {spyjs_getInput(e.currentTarget)});
-}
-var textareas = document.getElementsByTagName('textarea');
-for(var i = 0; i < textareas.length; i++) {
-	textareas[i].addEventListener("change", function(e) {spyjs_getInput(e.currentTarget)});
-}
-if(debug){
-	document.addEventListener("click", function(e) {chrome.storage.local.get(null, function (result) {
-		console.log(result);
-	});});
-}
+setInterval(function(){
+	spyjs_refreshEvents();
+}, 100);
 
+function spyjs_refreshEvents(){
+	if(currLoc != location.href){
+		currLoc=location.href;
+		if(debug){
+			console.log("("+currLoc+")");
+		}
+		spyjs_saveData("("+currLoc+")");
+	}
+	$('input').unbind('change');
+	$('input').change(function(e) {
+  		spyjs_getInput(e.currentTarget);
+	});
+	$('textarea').unbind('change');
+	$('textarea').change(function(e) {
+  		spyjs_getInput(e.currentTarget);
+	});
+}
+	
 
 function spyjs_getInput(inputInfo){
 	var name = inputInfo.name;
