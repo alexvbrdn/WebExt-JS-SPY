@@ -1,4 +1,8 @@
 # WebExt-JS-SPY
+**For testing purpose only.**
+
+**Do not use against the will of someone, I decline all responsability about the use of the extension.**
+
 A web browser extension that can log every pages visited and every inputs.
 To access to the logs go to the settings page of the extension.
 Firefox
