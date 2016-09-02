@@ -6,7 +6,7 @@ Firefox
 To install on Firefox:
  1. Go to about:debugging
  2. Load Temporary Add-ons
- 3. Choose any file of the folder of the extension
+ 3. Choose any file in the folder of the extension
 
 Chrome
 ======
